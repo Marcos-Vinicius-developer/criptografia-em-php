@@ -25,7 +25,7 @@ class Cripto {
         
     }
 
-    public function descriptografa($senha, $salt, $hash){
+    public function descriptografa($senha, $salt, $hash){ // aqui é passado como parâmetro a senha do usuário, o salt usado nela e o hash que foi gerado da criptografia.
 
         $hashPrograma = md5($senha . $salt);
 
@@ -61,4 +61,4 @@ $cri = new Cripto("123"); // setar uma senha
 
 $usuario = ($cri->criptografar()); // guardar em uma variavel pois será retornado um objeto.
 
-echo $cri->descriptografa("123", $usuario["salt"], $usuario["senha"]); // retornar true se a senha bate, se não, retorna false.
+echo $cri->descriptografa("123", $usuario["salt"], $usuario["senha"]); // retornar true se a senha bate, senão, retorna false.
